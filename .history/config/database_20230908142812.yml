@@ -62,10 +62,6 @@ test:
 #
 production:
   <<: *default
-  # 20230908下記を追記
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
-  #20230908下記をコメントアウト
-  # database: protospace_39778_production
-  # username: protospace_39778
-  # password: <%= ENV["PROTOSPACE_39778_DATABASE_PASSWORD"] %>
+  database: protospace_39778_production
+  username: protospace_39778
+  password: <%= ENV["PROTOSPACE_39778_DATABASE_PASSWORD"] %>

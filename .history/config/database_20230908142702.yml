@@ -21,11 +21,6 @@ default: &default
 
 development:
   <<: *default
-  # 20230908下記を追記
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
   database: protospace_39778_development
 
 # Warning: The database defined as "test" will be erased and
@@ -33,11 +28,6 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  # 20230908下記を追記
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
   database: protospace_39778_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -62,10 +52,6 @@ test:
 #
 production:
   <<: *default
-  # 20230908下記を追記
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
-  #20230908下記をコメントアウト
-  # database: protospace_39778_production
-  # username: protospace_39778
-  # password: <%= ENV["PROTOSPACE_39778_DATABASE_PASSWORD"] %>
+  database: protospace_39778_production
+  username: protospace_39778
+  password: <%= ENV["PROTOSPACE_39778_DATABASE_PASSWORD"] %>
