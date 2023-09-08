@@ -38,9 +38,10 @@ class PrototypesController < ApplicationController
   def edit
     @prototype = Prototype.find(params[:id])
     # ログインユーザーとプロトタイプの所有者が一致しない場合にリダイレクト
-    unless current_user == @prototype.user
-      redirect_to root_path
-    end
+  unless current_user == @prototype.user
+    flash[:alert] = "You don't have permission to edit this prototype."
+    redirect_to root_path
+  end
   end
 
 
